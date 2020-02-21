@@ -30,12 +30,16 @@ public class Main {
 
         int i = 0;
         while (i < mazes.size()) {
+            long start = System.currentTimeMillis();
             if (solveMazes(mazes.get(i))) {
                 System.out.println("You Won!");
+                System.out.println(m.path.size() + " steps to solve the maze");
             } else {
                 System.out.println("No Path");
             }
             i++;
+            long end = System.currentTimeMillis();
+            System.out.println("Time spent: " + (end-start) + " miliseconds");
         }
     }
 
